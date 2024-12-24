@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI知识库 - AI工具</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .tool-info {
+            flex-grow: 1;
+        }
+
+        .tool-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .category {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tools-filter {
+            text-align: center;
+            margin: 2rem auto;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--secondary-color);
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .tool-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .tool-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .stars {
+            color: #ffd700;
+        }
+
+        .price-tag {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AI知识库</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="articles.html">文章收藏</a></li>
+                <li><a href="tools.html" class="active">AI工具</a></li>
+                <li><a href="visualization.html">数据可视化</a></li>
+                <li><a href="about.html">关于我</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>AI工具导航</h1>
+            <p>精选实用的AI工具和应用</p>
+        </section>
+
+        <div class="tools-filter">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="搜索AI工具...">
+            </div>
+        </div>
+
+        <section class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-badge">热门</div>
+                <img src="../images/chatgpt.png" alt="ChatGPT">
+                <div class="tool-info">
+                    <div class="category">自然语言处理</div>
+                    <h3>ChatGPT</h3>
+                    <div class="tool-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>(4.9)</span>
+                    </div>
+                    <p>OpenAI开发的大型语言模型，能够进行自然对话、回答问题、写作等多种任务。</p>
+                    <div class="price-tag">免费版/Plus订阅</div>
+                </div>
+                <div class="tool-links">
+                    <a href="https://chat.openai.com" target="_blank" class="btn">访问网站</a>
+                    <a href="https://www.bilibili.com/video/BV1Yus6exEoQ" 
+                       onclick="window.open(this.href, '_blank'); return false;" 
+                       class="btn">使用教程</a>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <img src="../images/midjourney.png" alt="Midjourney">
+                <div class="tool-info">
+                    <div class="category">AI绘画</div>
+                    <h3>Midjourney</h3>
+                    <div class="tool-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>(4.8)</span>
+                    </div>
+                    <p>顶级AI绘画工具，通过文本描述生成高质量艺术作品，支持多种艺术风格和精确控制。</p>
+                    <div class="price-tag">付费订阅制</div>
+                </div>
+                <div class="tool-links">
+                    <a href="https://www.midjourney.com" target="_blank" class="btn">访问网站</a>
+                    <a href="https://www.bilibili.com/video/BV17gSAYqEzd" 
+                       onclick="window.open(this.href, '_blank'); return false;" 
+                       class="btn">使用教程</a>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-badge">推荐</div>
+                <img src="../images/copilot.png" alt="GitHub Copilot">
+                <div class="tool-info">
+                    <div class="category">AI编程助手</div>
+                    <h3>GitHub Copilot</h3>
+                    <div class="tool-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>(4.7)</span>
+                    </div>
+                    <p>基于AI的编程助手，提供智能代码补全、自动生成代码、注释生成等功能。</p>
+                    <div class="price-tag">付费订阅制</div>
+                </div>
+                <div class="tool-links">
+                    <a href="https://github.com/features/copilot" target="_blank" class="btn">访问网站</a>
+                    <a href="https://www.bilibili.com/video/BV1CG411o7oY" 
+                       onclick="window.open(this.href, '_blank'); return false;" 
+                       class="btn">使用教程</a>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <img src="../images/stable-diffusion.png" alt="Stable Diffusion">
+                <div class="tool-info">
+                    <div class="category">AI绘画</div>
+                    <h3>Stable Diffusion</h3>
+                    <div class="tool-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>(4.5)</span>
+                    </div>
+                    <p>开源的AI图像生成模型，支持本地部署，可进行深度定制和二次开发。</p>
+                    <div class="price-tag">开源免费</div>
+                </div>
+                <div class="tool-links">
+                    <a href="https://stability.ai" target="_blank" class="btn">访问网站</a>
+                    <a href="https://www.bilibili.com/video/BV1As4y127HW" 
+                       onclick="window.open(this.href, '_blank'); return false;" 
+                       class="btn">使用教程</a>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <img src="../images/claude.png" alt="Claude">
+                <div class="tool-info">
+                    <div class="category">自然语言处理</div>
+                    <h3>Claude</h3>
+                    <div class="tool-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>(4.6)</span>
+                    </div>
+                    <p>Anthropic开发的AI助手，擅长学术写作、数据分析和专业领域问答。</p>
+                    <div class="price-tag">部分免费</div>
+                </div>
+                <div class="tool-links">
+                    <a href="https://www.anthropic.com/claude" target="_blank" class="btn">访问网站</a>
+                    <a href="https://www.bilibili.com/video/BV1FuByYFEy7" 
+                       onclick="window.open(this.href, '_blank'); return false;" 
+                       class="btn">使用教程</a>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <img src="../images/runway.png" alt="Runway">
+                <div class="tool-info">
+                    <div class="category">AI视频创作</div>
+                    <h3>Runway</h3>
+                    <div class="tool-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>(4.4)</span>
+                    </div>
+                    <p>专业的AI视频创作平台，支持视频编辑、特效生成、背景音乐制作等。</p>
+                    <div class="price-tag">付费订阅制</div>
+                </div>
+                <div class="tool-links">
+                    <a href="https://runway.ml" target="_blank" class="btn">访问网站</a>
+                    <a href="https://www.bilibili.com/video/BV1hi421175Q" 
+                       onclick="window.open(this.href, '_blank'); return false;" 
+                       class="btn">使用教程</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AI知识库. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/tools.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html> 

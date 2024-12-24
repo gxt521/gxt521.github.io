@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI知识库 - 文章收藏</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        .article-list {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .article-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .article-item h2 {
+            color: var(--primary-color);
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        .article-content {
+            color: #444;
+            line-height: 1.8;
+            margin: 1.5rem 0;
+        }
+
+        .article-content ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .article-filters {
+            margin: 2rem auto;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            padding: 0.6rem 1.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .filter-btn:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .read-more {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .read-more:hover {
+            color: var(--primary-color);
+            transform: translateX(10px);
+        }
+
+        .read-more::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .read-more:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AI知识库</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="articles.html" class="active">文章收藏</a></li>
+                <li><a href="tools.html">AI工具</a></li>
+                <li><a href="visualization.html">数据可视化</a></li>
+                <li><a href="about.html">关于我</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>AI文章收藏</h1>
+            <p>精选AI领域的高质量文章和研究报告</p>
+        </section>
+
+        <div class="article-filters">
+            <button class="filter-btn active">全部</button>
+            <button class="filter-btn">深度学习</button>
+            <button class="filter-btn">自然语言处理</button>
+            <button class="filter-btn">计算机视觉</button>
+            <button class="filter-btn">AI应用</button>
+        </div>
+
+        <section class="article-list">
+            <article class="article-item">
+                <div class="article-meta">
+                    <span class="article-author">作者：Zahra Kadkhodaie等</span>
+                    <span class="article-date">发布于 2024-04-12</span>
+                </div>
+                <h2>向量空间中词表示的有效估计</h2>
+                <div class="article-content">
+                    <p>本论文深入研究了图像扩散模型如何在记忆和泛化阶段之间进行转换。通过实践实验，作者们探究了图像生成模型从记忆特定输入转向泛化更广泛模式的关键时刻。他们将这种转变归因于架构的归纳偏置，并将其与谐波分析中的概念，特别是"几何自适应谐波表示"进行了类比。</p>
+                    <p>通过阐明这一关键方面，该论文填补了我们对视觉生成模型理解中的重要空白，为该领域的进一步理论发展奠定了基础。</p>
+                </div>
+                <a href="https://arxiv.org/pdf/2310.02557" 
+                   class="read-more" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   onclick="window.open(this.href, '_blank'); return false;">
+                    阅读全文 →
+                </a>
+                <div class="tags">
+                    <span class="tag">图像生成</span>
+                    <span class="tag">扩散模型</span>
+                    <span class="tag">深度学习</span>
+                </div>
+            </article>
+
+            <article class="article-item">
+                <div class="article-meta">
+                    <span class="author">作者：OpenAI</span>
+                    <span class="date">发布于 2023-01-15</span>
+                </div>
+                <h2>GPT-4: 突破性的多模态大语言模型</h2>
+                <div class="article-content">
+                    <p>GPT-4是一个突破性的大型多模态模型，能够接受图像和文本输入并生成文本输出。在多个专业和学术基准测试中，GPT-4展现出接近人类水平的表现，包括在模拟律师资格考试中取得前10%的成绩。作为一个基于Transformer架构的预训练模型，GPT-4通过后训练校准过程提高了事实性和可靠性。该项目的核心是开发可在广泛规模范围内稳定运行的基础设施和优化方法，使我们能够仅使用不到1/1000的计算量就能准确预测GPT-4的某些性能特征。</p>
+                </div>
+                <a href="https://arxiv.org/pdf/2303.08774" class="read-more" target="_blank">阅读全文 →</a>
+                <div class="tags">
+                    <span class="tag">多模态AI</span>
+                    <span class="tag">深度学习</span>
+                    <span class="tag">大语言模型</span>
+                </div>
+            </article>
+
+            <article class="article-item">
+                <div class="article-meta">
+                    <span class="author">作者：Eric J. Topol</span>
+                    <span class="date">发布于 2019-01-07</span>
+                </div>
+                <h2>高效医学：人类与人工智能的融合</h2>
+                <div class="article-content">
+                    <p>通过在所有部门中使用标记的大数据以及显著增强的计算能力和云存储，已经实现了人工智能的使用，特别是深度学习。在医学方面，这开始在三个层面产生影响：对于临床医生来说，主要是更快速、准确的图像分析；对于卫生系统来说，通过改善工作流程和减少医疗差错；对于患者来说，使他们能够处理自己的数据，以促进健康。</p>
+                    <p>本文讨论了当前的局限性，包括偏见、隐私和安全性，以及缺乏透明度等在未来发展方向中存在的问题。随着时间的推移，准确性、生产力和工作流程的显著改善可能会实现，但是人工智能的应用会改善患者与医生之间的关系，还是恶化他们之间的关系，仍有待观察。</p>
+                </div>
+                <a href="https://www.nature.com/articles/s41591-018-0300-7" 
+                   class="read-more" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   onclick="window.open(this.href, '_blank'); return false;">
+                    阅读全文 →
+                </a>
+                <div class="tags">
+                    <span class="tag">医疗AI</span>
+                    <span class="tag">深度学习</span>
+                    <span class="tag">医患关系</span>
+                </div>
+            </article>
+
+            <article class="article-item">
+                <div class="article-meta">
+                    <span class="author">作者：Yanxin Long等</span>
+                    <span class="date">发布于 2023-03-04</span>
+                </div>
+                <h2>统一密集字幕和开放世界检测预训练</h2>
+                <div class="article-content">
+                    <p>开放世界检测方法得益于对图像-文本对的大规模视觉语言预训练，在零镜头或少镜头检测设置下显示出优越的泛化能力。但是，现有方法在推理阶段仍然需要预先定义一个类别空间，并且只预测属于该空间的对象。为了引入"真正的"开放世界检测器，本文提出了一种新的方法CapDet，它可以在给定的类别列表下进行预测，也可以直接生成预测的边界框的类别。</p>
+                    <p>具体来说，我们通过引入一个额外的密集字幕头来生成基于区域的字幕，将开放世界检测和密集字幕任务统一到一个单一但有效的框架中。此外，由于字幕数据集涵盖了更多的概念，添加字幕任务反过来又有利于检测性能的泛化。实验结果表明，通过统一密集标题任务，我们的CapDet在LVIS（1203个类）的基线方法上获得了显著的性能提升（例如，在LVIS稀有类上的mAP提高了2.1%）。此外，我们的CapDet在密集字幕任务上也达到了最先进的性能，例如在VG V1.2上的mAP为15.44%，在VG-COCO数据集上的mAP为13.98%。</p>
+                </div>
+                <a href="https://arxiv.org/abs/2303.02489" class="read-more" target="_blank">阅读全文 →</a>
+                <div class="tags">
+                    <span class="tag">计算机视觉</span>
+                    <span class="tag">深度学习</span>
+                    <span class="tag">开放世界检测</span>
+                    <span class="tag">密集字幕</span>
+                </div>
+            </article>
+
+            <article class="article-item">
+                <div class="article-meta">
+                    <span class="author">作者：Zahra Kadkhodaie等</span>
+                    <span class="date">发布于 2024-04-12</span>
+                </div>
+                <h2>扩散模型中的泛化源于几何自适应谐波表示</h2>
+                <div class="article-content">
+                    <p>本论文深入研究了图像扩散模型如何在记忆和泛化阶段之间进行转换。通过实践实验，作者们探究了图像生成模型从记忆特定输入转向泛化更广泛模式的关键时刻。他们将这种转变归因于架构的归纳偏置，并将其与谐波分析中的概念，特别是"几何自适应谐波表示"进行了类比。通过阐明这一关键方面，该论文填补了我们对视觉生成模型理解中的重要空白，为该领域的进一步理论发展奠定了基础。</p>
+              
+                 
+                </div>
+                <a href="https://www.nature.com/articles/s42256-023-00766-7" class="read-more" target="_blank">阅读全文 →</a>
+                <div class="tags">
+                    <span class="tag">智能制造</span>
+                    <span class="tag">AI应用</span>
+                    <span class="tag">机器学习</span>
+                </div>
+            </article>
+
+            <article class="article-item">
+                <div class="article-meta">
+                    <span class="author">作者：Tomas Mikolov等</span>
+                    <span class="date">发布于 2013-09-07</span>
+                </div>
+                <h2>向量空间中词表示的有效估计</h2>
+                <div class="article-content">
+                    <p>我们提出了两种新的模型架构，用于计算来自非常大的数据集的单词的连续向量表示。在单词相似度任务中测量这些表示的质量，并将结果与先前基于不同类型神经网络的最佳表现技术进行比较。我们观察到在更低的计算成本下，准确率有了很大的提高，即从16亿个单词数据集中学习高质量的单词向量只需要不到一天的时间。</p>
+                    <p>此外，我们展示了这些向量在我们的测试集上提供了最先进的性能，用于测量句法和语义单词相似度。</p>
+                </div>
+                <a href="https://arxiv.org/abs/1301.3781" 
+                   class="read-more" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   onclick="window.open(this.href, '_blank'); return false;">
+                    阅读全文 →
+                </a>
+                <div class="tags">
+                    <span class="tag">自然语言处理</span>
+                    <span class="tag">词向量</span>
+                    <span class="tag">深度学习</span>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AI知识库. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/articles.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html> 

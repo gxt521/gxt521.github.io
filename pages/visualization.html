@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI知识库 - 数据可视化</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        .charts-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .chart-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .chart-title {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .chart {
+            width: 100%;
+            height: 400px;
+        }
+
+        .chart-controls {
+            margin: 1rem 0;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .time-range {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .time-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--secondary-color);
+            background: transparent;
+            color: var(--secondary-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .time-btn.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .chart-description {
+            margin: 1rem 0;
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .data-source {
+            font-size: 0.8rem;
+            color: #999;
+            text-align: right;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AI知识库</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="articles.html">文章收藏</a></li>
+                <li><a href="tools.html">AI工具</a></li>
+                <li><a href="visualization.html" class="active">数据可视化</a></li>
+                <li><a href="about.html">关于我</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>AI发展趋势可视化</h1>
+            <p>通过数据图表展示AI领域的发展趋势</p>
+        </section>
+
+        <section class="charts-container">
+            <div class="chart-card">
+                <h2 class="chart-title">AI领域投资趋势（2019-2023）</h2>
+                <div class="chart-controls">
+                    <div class="time-range">
+                        <button class="time-btn" data-range="1y">1年</button>
+                        <button class="time-btn active" data-range="5y">5年</button>
+                        <button class="time-btn" data-range="10y">10年</button>
+                    </div>
+                </div>
+                <div class="chart-description">
+                    <p>展示全球和中国AI领域投资金额的变化趋势，反映AI技术的发展热度和市场关注度。</p>
+                </div>
+                <div id="investmentChart" class="chart"></div>
+                <div class="data-source">数据来源：CB Insights, 2024</div>
+            </div>
+
+            <div class="chart-card">
+                <h2 class="chart-title">各AI应用领域市场份额</h2>
+                <div class="chart-description">
+                    <p>分析不同AI应用领域的市场规模占比，展示AI技术在各个领域的渗透程度。</p>
+                </div>
+                <div id="marketShareChart" class="chart"></div>
+                <div class="data-source">数据来源：Gartner Research, 2024</div>
+            </div>
+
+            <div class="chart-card">
+                <h2 class="chart-title">AI模型性能提升趋势</h2>
+                <div class="chart-description">
+                    <p>追踪AI模型在准确率和推理速度方面的进步，展示AI技术的快速发展。</p>
+                </div>
+                <div id="performanceChart" class="chart"></div>
+                <div class="data-source">数据来源：MLPerf Benchmarks, 2024</div>
+            </div>
+
+            <div class="chart-card">
+                <h2 class="chart-title">全球AI人才分布</h2>
+                <div class="chart-description">
+                    <p>展示全球AI人才的地理分布情况，反映各地区在AI领域的人才储备。</p>
+                </div>
+                <div id="talentMapChart" class="chart"></div>
+                <div class="data-source">数据来源：LinkedIn Talent Insights, 2024</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AI知识库. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/visualization.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html> 
